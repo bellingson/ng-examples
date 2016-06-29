@@ -1,7 +1,16 @@
 # Logs
 logs
 *.log
+*.out
 npm-debug.log*
+
+*.ipr
+*.iml
+*.iws
+
+build
+dist
+tmp
 
 # Runtime data
 pids

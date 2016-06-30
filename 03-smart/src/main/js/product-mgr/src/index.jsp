@@ -5,6 +5,10 @@
     <title>Product Manager</title>
     <base href="/admin/product/">
 
+    <script type="text/javascript">
+        var csrfToken = '${_csrf.token}';
+    </script>
+
 </head>
 <body>
 

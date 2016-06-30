@@ -30,7 +30,9 @@ class DemoData {
                 new Product(name: 'Tiffany Clock', description: IPSUM, price: 99.00, imageName: 'clock.jpg'),
                 new Product(name: 'Self-Driving Car', description: IPSUM, price: 29000.00, imageName: 'car.jpg'),
                 new Product(name: 'Big Gulp', description: IPSUM, price: 19.00, imageName: 'wine.jpg'),
-                new Product(name: 'Gift Certificate', description: IPSUM, price: 2.00 )
+                new Product(name: 'Gift Certificate', description: IPSUM, price: 2.00 ),
+                new Product(name: 'Cup of Coffee', description: IPSUM, price: 19.00 ),
+                new Product(name: 'Steak Knives', description: IPSUM, price: 6.00 )
         ]
 
         dao.save(items)
@@ -38,15 +40,10 @@ class DemoData {
         User admin = new User(firstName: 'admin', lastName: 'admin', email: 'admin', username: 'admin', password: User.hash('admin'))
         admin.addAuthority(Authority.ADMIN)
 
-        log.debug("SAVE USER1: ${admin.roles}")
-
         User customer = new User(firstName: 'Bob', lastName: 'Smith', email: 'customer', username: 'customer', password: User.hash('customer'))
         customer.addAuthority(Authority.CUSTOMER)
 
         dao.save([admin, customer])
-
-
-        log.debug("SAVE USER: ${admin.roles}")
 
         log.debug("loading data: complete")
 

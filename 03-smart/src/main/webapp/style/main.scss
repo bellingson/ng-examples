@@ -31,16 +31,43 @@ div.top-bar {
     }
 
     nav {
-        font-size: 16px;
+      font-size: 16px;
 
-        a { color: #fff; display: inline-block; padding: 10px 15px; }
-        a:hover { color: $orange; }
+      a {
+        color: #fff;
+        display: inline-block;
+        padding: 10px 15px;
+      }
+      a:hover {
+        color: $orange;
+      }
 
-        ul { margin: 0; padding: 0; }
-        li { display: inline-block; list-style: none; margin: 0; padding: 0; }
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        display: inline-block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
 
     }
+
     #logout-form { display: none; }
+}
+
+div.admin-nav {
+  background: #f1f1f1;
+  border-bottom: 1px dotted #999;
+  ul {
+    margin: 0;
+    padding: 5px 0;
+    list-style: none;
+    li { display: inline; }
+  }
+
 }
 
 

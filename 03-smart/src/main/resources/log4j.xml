@@ -27,7 +27,7 @@
     </category>
 
     <category name="org.hibernate.sql">
-        <level value="debug"/>
+        <level value="warn"/>
     </category>
 
     <category name="org.hibernate">
@@ -48,7 +48,7 @@
     </category>
 
     <category name="org.springframework.security">
-        <level value="debug"/>
+        <level value="warn"/>
     </category>
 
 

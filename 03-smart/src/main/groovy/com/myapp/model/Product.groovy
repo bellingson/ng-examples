@@ -3,12 +3,16 @@ package com.myapp.model
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Lob
+import javax.validation.constraints.NotNull
 import java.beans.Transient
 
 @Entity
 class Product extends EntityImpl {
 
+    @NotNull(message = "Name is required")
     String name
+
+    @NotNull(message = "Price is required")
     Float price
 
     @Lob

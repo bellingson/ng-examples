@@ -6,5 +6,3 @@ if(link) {
         document.getElementById('logout-form').submit();
     });
 }
-
-console.log(link);

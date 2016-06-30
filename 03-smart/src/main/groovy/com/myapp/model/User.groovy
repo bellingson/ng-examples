@@ -80,6 +80,9 @@ class User extends EntityImpl implements UserDetails {
         return false
     }
 
+    Boolean getIsAdmin() {
+        hasAuthority(Authority.ADMIN)
+    }
 
     static String hash(String string) {
 //        return new ShaPasswordEncoder().encodePassword(string,null)

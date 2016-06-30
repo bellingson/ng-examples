@@ -35,7 +35,7 @@
 
         <ul>
             <li><b>Admin: </b></li>
-            <li><a href="/admin/product/">Products</a></li>
+            <li><a href="/admin/product/#/">Products</a></li>
         </ul>
     </div>
 </div>

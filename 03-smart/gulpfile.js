@@ -21,7 +21,7 @@ gulp.task('sass', function() {
 
 });
 
-gulp.task('copyWebapp', ['sass'], function() {
+gulp.task('copyapp', ['sass'], function() {
 
     return gulp.src(sourceWebappDir + '/**/*')
         .pipe(gulp.dest(buildWebappDir));
@@ -29,7 +29,7 @@ gulp.task('copyWebapp', ['sass'], function() {
 });
 
 gulp.task('watch', function () {
-    gulp.watch(sourceWebappDir + '/**', ['copyWebapp']);
+    gulp.watch(sourceWebappDir + '/**', ['copyapp']);
 });
 
 /* ng2 section */
@@ -112,4 +112,4 @@ function execSync(cmd, cwd) {
 
 /* all */
 
-gulp.task('default', [ 'copyWebapp', 'ng:dist' ], function() { });
+gulp.task('default', [ 'copyapp', 'ng:dist' ], function() { });

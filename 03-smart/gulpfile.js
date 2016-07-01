@@ -34,81 +34,37 @@ gulp.task('watch', function () {
 
 /* ng2 section */
 
-var ng2AppsByName = { pmgr: 'src/main/js/product-mgr' }
+var execV = require('exec-with-verify');
 
-var ng2Apps = _.values(ng2AppsByName);
+var ng2Apps = [ 'src/main/js/product-mgr' ];
 
-gulp.task('ng:install', function(cb) {
+gulp.task('ng:install', function() {
 
-    _.each(ng2Apps, function(app) {
-        execSync('npm install',app);
+    var configs = ng2Apps.map(function(app) {
+        return { cmd: 'npm install', cwd: app };
     });
 
-    cb();
+    return execV.execWithVerify(configs);
 });
 
 gulp.task('ng:build', function() {
-
-    return Promise.all(ng2Apps.map(app => {
-            return execWithValidate('ng build', app, 'Built project successfully')
-        }));
-
+    return buildNgApps(false);
 });
 
 gulp.task('ng:dist', [ 'ng:install'], function() {
-
-    return Promise.all(ng2Apps.map(app => {
-            return execWithValidate('ng build -prod', app, 'Built project successfully')
-        }));
-
+    return buildNgApps(true);
 });
 
-function execWithValidate(cmd, cwd, successString) {
+function buildNgApps(isProd) {
 
-    return new Promise(function(resolve, reject) {
+    var cmd = 'ng build' + (isProd ? ' --prod' : '');
 
-        console.log("cwd: " + cwd);
-        console.log("exec: " + cmd);
+    var execConfig = ng2Apps.map(function(app) {
+        return { cmd: cmd, cwd: app, successString: 'Built project successfully'}
+    });
 
-        var _exec = require('child_process').exec;
-        _exec(cmd,{cwd: cwd}, function(err, stout, sterr) {
-
-            console.log(stout);
-            console.log(sterr);
-
-            if(! _.includes(stout,successString)) {
-                reject('EXECUTION FAILED');
-                return;
-            }
-
-            if(err)  {
-                reject(err);
-                return
-            }
-
-            console.log("exec complete: " + cmd);
-
-            resolve();
-        }); // _exec
-
-    }); // promise
-
+    return execV.execWithVerify(execConfig);
 }
-
-
-function execSync(cmd, cwd) {
-
-    var _exec = require('child_process').execSync;
-    var buffer = _exec( cmd, {cwd: cwd});
-
-    var StringDecoder = require('string_decoder').StringDecoder;
-    var decoder = new StringDecoder('utf-8');
-    console.log(decoder.write(buffer));
-
-}
-
-
-
 
 /* all */
 

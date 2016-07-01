@@ -9,6 +9,7 @@
     "gulp-sourcemaps": "^1.6.0"
   },
   "devDependencies": {
+    "exec-with-verify": "^1.0.1",
     "lodash": "^4.13.1"
   },
   "scripts": {

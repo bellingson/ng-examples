@@ -4,6 +4,8 @@ logs
 *.out
 npm-debug.log*
 
+03-smart/.gradle
+
 *.ipr
 *.iml
 *.iws

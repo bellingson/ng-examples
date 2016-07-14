@@ -5,7 +5,7 @@ import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import {Product} from "./product";
+import {Product} from "./product.model";
 
 
 declare var csrfToken: string;

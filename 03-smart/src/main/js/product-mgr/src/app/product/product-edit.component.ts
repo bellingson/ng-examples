@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
 
-import {Product} from "./product";
+import {Product} from "./product.model";
 import {ProductService} from "./product.service";
 
 @Component({

@@ -7,7 +7,8 @@ Example code for my Angular 2 conference talk
     npm                 // install node 4.4.5 or later
     gulp                // npm install gulp -g
     angular-cli         // npm install angular-cli -g
-
+    typescript          // npm install typescript
+    typings             // npm install typings
 
 #01-typescript
 

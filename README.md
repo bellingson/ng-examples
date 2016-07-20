@@ -12,7 +12,12 @@ Example code for my Angular 2 conference talk
 
 #01-typescript
 
-Simple typescript compilation demo
+Simple typescript compilation demo.  TypeScript (.ts) files are compiled by ts and run by node.
+
+    cd 01-typescript
+    tsc                     
+    node main
+    node fatarrow
 
 # 02-newapp 
 
